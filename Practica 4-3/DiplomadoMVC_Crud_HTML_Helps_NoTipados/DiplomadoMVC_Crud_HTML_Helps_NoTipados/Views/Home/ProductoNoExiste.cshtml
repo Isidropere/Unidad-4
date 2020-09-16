@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ProductoNoExiste";
+}
+
+<h2>Producto No Existe</h2>
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta  name="viewport"content="width=divice-width"/>
+    <title>ProductoNoExiste</title>
+</head>
+<body>
+    <div>
+        <p>El codigo de producto ingresado no existe:   @Html.ActionLink("Crear Nuevo?", "Grabar") </p>
+        @Html.ActionLink("Retornar","Index")
+    </div>
+</body>
+</html>

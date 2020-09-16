@@ -1,0 +1,45 @@
+﻿@model Diplomado_MVC_HTML_Helps_Persona.Models.Persona
+@{
+    ViewBag.Title = "EditarPersona";
+}
+
+<h2>Editar Persona</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport"content="width=device-width" />
+    <title>EditarPersona</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Codigo:
+                @Html.EditorFor(model => model.Codigo)
+            </p>
+
+            <p>
+                Nombre:
+                @Html.EditorFor(model => model.Nombre)
+            </p>
+            <p>
+                Peso:
+                @Html.EditorFor(model => model.Peso)
+            </p>
+            <p>
+                Tabaja:
+                @Html.EditorFor(model => model.Tabaja)
+            </p>
+            <p>
+                FechaNacimiento:
+                @Html.EditorFor(model => model.FechaNacimiento)
+            </p>
+            <p>
+                <input  type="submit"value="Confirmar"/>
+            </p>
+        }
+    </div>
+</body>
+</html>
+

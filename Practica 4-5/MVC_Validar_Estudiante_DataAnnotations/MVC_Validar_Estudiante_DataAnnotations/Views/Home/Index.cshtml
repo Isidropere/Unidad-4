@@ -1,0 +1,67 @@
+﻿@model MVC_Validar_Estudiante_DataAnnotations.Models.Estudiante
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="jumbotron; col-md-10">
+        @using (Html.BeginForm())
+        {
+            <p>
+                Ingresa la lave del estudiante:
+                @Html.EditorFor(model => model.ID_Estudiante)
+                @Html.ValidationMessageFor(model => model.ID_Estudiante)
+
+            </p>
+
+            <p>
+                Ingresa el Nombre
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </p>
+
+            <p>
+                Ingresa los Apellidos
+                @Html.EditorFor(model => model.Apellidos)
+                @Html.ValidationMessageFor(model => model.Apellidos)
+            </p>
+
+            <p>
+                Ingresa la Edad (Entre 14 y 65)
+                @Html.EditorFor(model => model.Edad)
+                @Html.ValidationMessageFor(model => model.Edad)
+            </p>
+
+            <p>
+                Ingresa el Email:
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </p>
+
+            <p>
+                Ingresa el Genero:
+                @Html.EditorFor(model => model.Genero)
+                @Html.ValidationMessageFor(model => model.Genero)
+            </p>
+
+            <p>
+                Ingresa el Estado Civil:
+                @Html.EditorFor(model => model.EstadoCivil)
+                @Html.ValidationMessageFor(model => model.EstadoCivil)
+            </p>
+
+            <p>
+                <input type="submit" value="Confirmar" />
+            </p>
+        }
+
+    </div >
+
+</body>
+</html>

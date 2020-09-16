@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MVC_CRUD_DiplomadoUASDCodeFirst.Model.Models.Departamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a class=" btn btn-success" style="margin-bottom:10px" href="/Departamentoes/Create">
+    Create New
+</a>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            <a href="/Departamentoes/Edit?id=@item.DepartamentoID" class="btn btn-primary">Edit</a>
+            <a href="/Departamentoes/Details?id=@item.DepartamentoID" class="btn btn-success">Details</a>
+            <a href="/Departamentoes/Delete?id=@item.DepartamentoID" class="btn btn-danger">Delete</a>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.DepartamentoID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.DepartamentoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.DepartamentoID })*@
+        </td>
+    </tr>
+}
+
+</table>

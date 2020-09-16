@@ -1,0 +1,100 @@
+﻿@model IEnumerable<MVC_CRUP_DiplomadoUASD.Models.TBL_PELICULA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container mt-3">
+
+    <h2>Lista de pelicula</h2>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <a class=" btn btn-success" style="margin-bottom:10px" href="/TBL_PELICULA/Create">
+                Create New
+            </a>
+        </div>
+        <div class="col-lg-10">
+            <input class="form-control" id="input_search" name="search" type="text" placeholder="busqueda..." />
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Director)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AutorPrincipal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.No_Autor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Duracion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estreno)
+                    </th>
+                    <th> Acciones </th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Director)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AutorPrincipal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.No_Autor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duracion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estreno)
+                        </td>
+                        <td>
+                            @Html.Raw("<a data-modal='' href='/TBL_PELICULA/Edit/" + item.Codigo + "'id='" + item.Codigo + "'title='Edit'><span class='glyphicon glyphicon-edit'></span> </a>")
+                            @Html.Raw("<a data-modal='' href='/TBL_PELICULA/Details/" + item.Codigo + "'id='" + item.Codigo + "'title='Details'><span class='glyphicon glyphicon-th-list'></span> </a>")
+                            @Html.Raw("<a data-modal='' href='/TBL_PELICULA/Delete/" + item.Codigo + "'id='" + item.Codigo + "'title='Delete'><span class='glyphicon glyphicon-trash'></span> </a>")
+
+                            @*<a href="/TBL_PELICULA/Edit?id=@item.Codigo" class="btn btn-primary">Edit</a>
+                                <a href="/TBL_PELICULA/Edit?id=@item.Codigo" class="btn btn-success">Details</a>
+                                <a href="/TBL_PELICULA/Edit?id=@item.Codigo" class="btn btn-danger">Delete</a>*@
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @*@buscar por cualquier elmento de la tablas*@
+    @section scripts
+        {
+        <script>
+            $(document).ready(function () {
+                $("#input_search").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#table_body tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+
+        </script>
+    }
+</div>
+

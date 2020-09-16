@@ -1,0 +1,61 @@
+﻿@model MVC_Validar_Estudiante_DataAnnotations.Models.Estudiante
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="jumbotron; col-md-10">
+        @Html.ValidationSummary()
+        @using (Html.BeginForm())
+        {
+            <p>
+                Ingresa la lave del estudiante:
+                @Html.EditorFor(model => model.ID_Estudiante)
+            </p>
+
+            <p>
+                Ingresa el Nombre
+                @Html.EditorFor(model => model.Nombre)
+              
+            </p>
+
+            <p>
+                Ingresa los Apellidos
+                @Html.EditorFor(model => model.Apellidos)
+            </p>
+
+            <p>
+                Ingresa la Edad (Entre 14 y 65)
+                @Html.EditorFor(model => model.Edad)
+            </p>
+
+            <p>
+                Ingresa el Email:
+                @Html.EditorFor(model => model.Email)
+            </p>
+
+            <p>
+                Ingresa el Genero:
+                @Html.EditorFor(model => model.Genero)
+            </p>
+
+            <p>
+                Ingresa el Estado Civil:
+                @Html.EditorFor(model => model.EstadoCivil)
+            </p>
+
+            <p>
+                <input type="submit" value="Confirmar" />
+            </p>
+        }
+
+    </div >
+
+</body>
+</html>

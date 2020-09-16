@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\CHIP\\Desktop\\Diplomado WEB C#\\Unidad 4\\Practica 4-1\\MVC-ActionLink-DiplomadoUASD\\Iperez_MVC-ActionLink-DiplomadoUASD\\Iperez_MVC_ActionLink_DiplomadoUASD.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

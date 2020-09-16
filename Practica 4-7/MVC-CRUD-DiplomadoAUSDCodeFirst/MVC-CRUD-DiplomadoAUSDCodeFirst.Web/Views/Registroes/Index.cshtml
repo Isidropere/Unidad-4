@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVC_CRUD_DiplomadoUASDCodeFirst.Model.Models.Registro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a class=" btn btn-success" style="margin-bottom:10px" href="/Registroes/Create">
+        Create New
+    </a>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartemantoID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sueldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartemantoID)
+        </td>
+        <td>
+            <a href="/Registroes/Edit?id=@item.RegistroID" class="btn btn-primary">Edit</a>
+            <a href="/Registroes/Details?id=@item.RegistroID" class="btn btn-success">Details</a>
+            <a href="/Registroes/Delete?id=@item.RegistroID" class="btn btn-danger">Delete</a>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.RegistroID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RegistroID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RegistroID })*@
+        </td>
+    </tr>
+}
+
+</table>

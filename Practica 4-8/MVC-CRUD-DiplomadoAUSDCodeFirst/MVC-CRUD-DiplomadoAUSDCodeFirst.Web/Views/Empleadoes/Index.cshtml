@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MVC_CRUD_DiplomadoUASDCodeFirst.Model.Models.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container mt-3">
+    <h2>Lista de Empleados</h2>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <a class=" btn btn-success" style="margin-bottom:10px" href="/Empleadoes/Create">
+                Create New
+            </a>
+        </div>
+        <div class="col-lg-10">
+            <input class="form-control" id="input_search" name="search" type="text" placeholder="busqueda..." />
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellidos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fecha_Ingreso)
+                    </th>
+                    <th>
+                        acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellidos)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fecha_Ingreso)
+                        </td>
+                        <td>
+
+                            <a href="/Empleadoes/Edit?id=@item.EmpleadoID" 
+                               class="btn btn-primary">Edit</a>
+                            <a href="/Empleadoes/Details?id=@item.EmpleadoID" 
+                               class="btn btn-success">Details</a>
+                            <a href="/Empleadoes/Delete?id=@item.EmpleadoID" 
+                               class="btn btn-danger">Delete</a>
+                     
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @section scripts
+        {
+        <script>
+            $(document).ready(function () {
+                $("#input_search").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#table_body tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+
+    }
+</div>

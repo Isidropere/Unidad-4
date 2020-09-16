@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ModificacionDeProducto";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Producto</title>
+</head>
+<body>
+    <div>
+        @using(Html.BeginForm("ModificacionDeProducto", "Home",FormMethod.Post))
+        { 
+        <p>
+           
+            Codigo de Producto:
+            @Html.Display("Codigo")
+            @Html.Hidden("Codigo")
+        </p>
+        <p>
+            Descripcion:
+            @Html.TextBox("Descripcion")
+        </p>
+        <p>
+            Procio:
+            @Html.TextBox("Precio")
+        </p>
+
+        <p>
+            <input type="submit" value="Confirmar" />
+        </p>
+        }
+    </div>
+</body>
+</html>

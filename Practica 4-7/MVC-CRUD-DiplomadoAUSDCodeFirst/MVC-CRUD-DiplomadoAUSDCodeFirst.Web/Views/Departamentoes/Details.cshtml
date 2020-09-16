@@ -1,0 +1,31 @@
+﻿@model MVC_CRUD_DiplomadoUASDCodeFirst.Model.Models.Departamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a class=" btn btn-success" style="margin-bottom:10px" href="/Departamentoes/Index">
+        volver
+    </a>
+
+    <a class=" btn btn-primary" style="margin-bottom:10px" href="/Departamentoes/Edit?id=@Model.DepartamentoID">
+        Editar
+    </a>
+</p>

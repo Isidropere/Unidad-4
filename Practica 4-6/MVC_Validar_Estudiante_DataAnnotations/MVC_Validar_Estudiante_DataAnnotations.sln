@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_Validar_Estudiante_DataAnnotations", "MVC_Validar_Estudiante_DataAnnotations\MVC_Validar_Estudiante_DataAnnotations.csproj", "{125DA7E9-22A9-43B0-A3C8-5EE8ADD1498D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125DA7E9-22A9-43B0-A3C8-5EE8ADD1498D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125DA7E9-22A9-43B0-A3C8-5EE8ADD1498D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125DA7E9-22A9-43B0-A3C8-5EE8ADD1498D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125DA7E9-22A9-43B0-A3C8-5EE8ADD1498D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {370C9F25-B0EA-4546-A88E-C662B1B3AD86}
+	EndGlobalSection
+EndGlobal
